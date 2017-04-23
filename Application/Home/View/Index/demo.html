@@ -1,0 +1,113 @@
+<!DOCTYPE html>
+<html>
+
+<head>
+    <meta charset="utf-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1" user-scalable="no">
+    <meta name="description" content="ECharts, a powerful, interactive charting and visualization library for browser">
+    <link rel="shortcut icon" href="/Public/images/favicon.png">
+    <link rel="stylesheet" type="text/css" href="http://apps.bdimg.com/libs/bootstrap/3.3.4/css/bootstrap.min.css">
+    <!-- HTML5 shim and Respond.js for IE8 support of HTML5 elements and media queries-->
+    <!--[if lt IE 9]><script src="https://oss.maxcdn.com/html5shiv/3.7.2/html5shiv.min.js"></script><script src="https://oss.maxcdn.com/respond/1.4.2/respond.min.js"></script><![endif]-->
+    <link rel="stylesheet" type="text/css" href="/Public/css/main.css">
+    <script type="text/javascript" src="/Public/vendors/pace/pace.min.js"></script>
+    <script id="font-hack" type="text/javascript">
+    if (/windows/i.test(navigator.userAgent)) {
+        var el = document.createElement('style');
+        el.innerHTML = '' + '@font-face {font-family:"noto-thin";src:local("Microsoft Yahei");}' + '@font-face {font-family:"noto-light";src:local("Microsoft Yahei");}';
+        document.head.insertBefore(el, document.getElementById('font-hack'));
+    }
+    </script>
+    <title>Personalized Examples</title>
+    <link rel="stylesheet" href="/Public/vendors/perfect-scrollbar/0.6.8/css/perfect-scrollbar.min.css">
+    <script type="text/javascript" src="/Public//vendors/jquery/jquery.min.js"></script>
+</head>
+<!--[if lte IE 8]>
+<body class="lower-ie">
+<![endif]-->
+<!--[if (gt IE 8)|!(IE)]><body class="undefined"></body><![endif]-->
+<div id="lowie-main"><img src="/Public/images/forie.png" alt="ie tip"></div>
+<div id="main">
+    <nav class="navbar navbar-default navbar-fixed-top">
+        <div class="container-fluid">
+            <div class="navbar-header">
+                <button type="button" data-toggle="collapse" data-target="#bs-example-navbar-collapse-1" aria-expanded="false" class="navbar-toggle collapsed"><span class="sr-only">Toggle navigation</span><span class="icon-bar"></span><span class="icon-bar"></span><span class="icon-bar"></span></button>
+                <a href="http://echarts.baidu.com/index.html" class="navbar-brand"><img src="/Public/images/logo.png" alt="echarts logo" class="navbar-logo"></a>
+            </div>
+            <div id="bs-example-navbar-collapse-1" class="collapse navbar-collapse">
+                <ul class="nav navbar-nav navbar-right">
+                    <li id="nav-index"><a href="{:U('Index/index')}">首页</a></li>
+                    <li id="nav-doc" class="dropdown"><a href="#" data-toggle="dropdown" class="dropdown-toggle">文档<b class="caret"></b></a>
+                        <ul class="dropdown-menu">
+                            <li><a href="http://echarts.baidu.com/tutorial.html">教程</a></li>
+                            <li><a href="http://echarts.baidu.com/changelog.html">CHANGELOG</a></li>
+                        </ul>
+                    </li>
+                    <li id="nav-examples"><a href="{:U('Index/examples')}" data-toggle="dropdown" class="dropdown-toggle">作品<b class="caret"></b></a>
+                        <ul class="dropdown-menu">
+                            <li><a href="{:U('Index/examples')}">官方示例</a></li>
+                            <li><a href="http://gallery.echartsjs.com">GALLERY</a></li>
+                        </ul>
+                    </li>
+                    <li id="nav-eccel"><a href="{:U('Index/examples')}" data-toggle="dropdown" class="dropdown-toggle">Excel工具<b class="caret"></b></a>
+                        <ul class="dropdown-menu">
+                            <li><a href="{:U('Index/excel')}">在线Excel</a></li>
+                            <li><a href="">使用说明</a></li>
+                        </ul>
+                    </li>   
+                </ul>
+            </div>
+        </div>
+    </nav>
+    <div id="left-chart-nav">
+    <ul>
+    </ul>
+    </div>
+    <div id="nav-mask">
+    </div>
+    <div id="nav-layer">
+        <ul class="chart-list">
+        </ul>
+    </div>
+    <div id="chart-demo">
+    </div>
+</div>
+<script type="text/javascript" src="/Public/vendors/bootstrap/js/bootstrap.min.js"></script>
+
+<script type="text/javascript" src="/Public/vendors/bootstrap/js/validator.js"></script>
+<!-- 滚动监听插件 -->
+<script type="text/javascript" src="/Public/vendors/waypoint.js"></script>
+
+<script type="text/javascript" src="vendors/lodash.js"></script>
+<!-- 滚动条 -->
+<script type="text/javascript" src="/Public/vendors/perfect-scrollbar/0.6.8/js/perfect-scrollbar.min.js"></script>
+<!-- 延迟加载 -->
+<script type="text/javascript" src="/Public/vendors/jquery.lazyload.min.js"></script>
+<script type="text/javascript">
+    var GALLERY_PATH = 'http://echarts.baidu.com/gallery/';
+    console.log(GALLERY_PATH);
+     var GALLERY_EDITOR_PATH = GALLERY_PATH + 'editor.html?c=';
+     var GALLERY_VIEW_PATH = GALLERY_PATH + 'view.html?c=';
+     var GALLERY_THUMB_PATH = GALLERY_PATH + 'data/thumb/';
+</script>
+<!-- 定义图标类型名称等 -->
+<script type="text/javascript" src="/Public/js/config.js"></script>
+<!-- 定义左边导航栏 -->
+<script type="text/javascript" src="/Public/js/examples-nav.js"></script>
+<script type="text/javascript">
+            document.getElementById('nav-examples').className = 'active';
+            function loadDemo() {
+                var chartId = location.hash.slice(1);
+                $('#chart-demo').html('<iframe src="' + GALLERY_EDITOR_PATH + chartId + '"></iframe>');
+            }
+
+            $(window).on('hashchange',
+            function() {
+                loadDemo();
+            });
+            loadDemo();
+</script>
+<script type="text/javascript" src="/Public/js/hm.js"></script>
+
+</html>

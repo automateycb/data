@@ -1,0 +1,40 @@
+<layout name="Public/layout"/>  
+
+    <div id="nav-mask"></div>
+    <div id="nav-layer">
+        <ul class="chart-list"></ul>
+    </div>
+    <div id="left-chart-nav">
+        <ul></ul>
+    </div>
+    <div id="explore-container">
+        <div class="chart-list-panel"></div>
+    </div>
+    <div style="display:none">点击查看详情</div>
+
+    <script type="text/javascript" src="/Public/vendors/bootstrap/js/bootstrap.min.js"></script>
+
+	<script type="text/javascript" src="/Public/vendors/bootstrap/js/validator.js"></script>
+	<!-- 滚动监听插件 -->
+	<script type="text/javascript" src="/Public/vendors/waypoint.js"></script>
+	<!-- 滚动条 -->
+	<script type="text/javascript" src="/Public/vendors/perfect-scrollbar/0.6.8/js/perfect-scrollbar.min.js"></script>
+	<!-- 延迟加载 -->
+	<script type="text/javascript" src="/Public/vendors/jquery.lazyload.min.js"></script>
+	<script type="text/javascript">
+	    var GALLERY_PATH = 'http://echarts.baidu.com/gallery/';
+	    console.log(GALLERY_PATH);
+	    var GALLERY_EDITOR_PATH = GALLERY_PATH + 'editor.html?c=';
+	    var GALLERY_VIEW_PATH = GALLERY_PATH + 'view.html?c=';
+	    var GALLERY_THUMB_PATH = GALLERY_PATH + 'data/thumb/';
+	</script>
+	<!-- 定义图标类型名称等 -->
+	<script type="text/javascript" src="/Public/js/config.js"></script>
+	<!-- 加载图标以及生成连接 -->
+	<script type="text/javascript" src="/Public/js/chart-list.js"></script>
+	<!-- 定义左边导航栏 -->
+	<script type="text/javascript" src="/Public/js/examples-nav.js"></script>
+	<script type="text/javascript">
+	    document.getElementById('nav-examples').className = 'active';
+	</script>
+	<script type="text/javascript" src="/Public/js/hm.js"></script>
